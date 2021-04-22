@@ -250,7 +250,7 @@ class Config(object):
                 self._update_internal_config_dict(sequential_embedding_model_init)
             else:
                 self._update_internal_config_dict(sequential_init)
-                if dataset == 'ml-100k' and model in ['GRU4RecF', 'SASRecF', 'FDSA', 'S3Rec']:
+                if dataset == 'ml-100k' and model in ['GRU4RecF', 'SASRecF', 'FDSA', 'S3Rec','NARMF','TransRecF','SHANF','NARMFF','BERT4RecF','SASRecFF',"STAMPF"]:
                     self._update_internal_config_dict(special_sequential_on_ml_100k_init)
 
         elif self.internal_config_dict['MODEL_TYPE'] == ModelType.KNOWLEDGE:

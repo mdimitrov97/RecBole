@@ -17,7 +17,7 @@ from collections import ChainMap
 
 import numpy as np
 import torch
-
+import pickle
 from recbole.evaluator.abstract_evaluator import GroupedEvaluator, IndividualEvaluator
 from recbole.evaluator.metrics import metrics_dict
 
@@ -101,7 +101,6 @@ class TopKEvaluator(GroupedEvaluator):
             for k in self.topk:
                 key = '{}@{}'.format(metric, k)
                 metric_dict[key] = round(value[k - 1], self.precision)
-
         return metric_dict
 
     def _check_args(self):
@@ -137,6 +136,7 @@ class TopKEvaluator(GroupedEvaluator):
             metric_fuc = metrics_dict[metric.lower()]
             result = metric_fuc(pos_idx_matrix, pos_len_list)
             result_list.append(result)  # n_users x len(metrics) x len(ranks)
+        pickle.dump(result_list, open("metrics.p", "wb"))
         result = np.stack(result_list, axis=0).mean(axis=1)  # len(metrics) x len(ranks)
         return result
 
