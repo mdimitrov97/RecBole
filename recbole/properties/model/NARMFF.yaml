@@ -1,0 +1,7 @@
+embedding_size: 64
+hidden_size: 128
+n_layers: 1
+dropout_probs: [0.25,0.5]
+selected_features: ['movie_title','release_year']
+pooling_mode: 'sum'
+loss_type: 'CE'

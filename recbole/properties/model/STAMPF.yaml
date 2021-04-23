@@ -1,0 +1,4 @@
+embedding_size: 64
+loss_type: 'CE'
+selected_features: ['brand']
+pooling_mode: 'sum'

@@ -1,0 +1,6 @@
+embedding_size: 64
+short_item_length: 2
+loss_type: "CE"
+selected_features: ['item_category']
+pooling_mode: 'sum'
+reg_weight: [0.01,0.0001]
