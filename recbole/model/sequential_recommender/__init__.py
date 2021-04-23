@@ -17,3 +17,7 @@ from recbole.model.sequential_recommender.sasrecf import SASRecF
 from recbole.model.sequential_recommender.srgnn import SRGNN
 from recbole.model.sequential_recommender.stamp import STAMP
 from recbole.model.sequential_recommender.transrec import TransRec
+from recbole.model.sequential_recommender.transrecf import TransRecF
+from recbole.model.sequential_recommender.shanf import SHANF
+from recbole.model.sequential_recommender.narmff import NARMF
+from recbole.model.sequential_recommender.stampf import STAMPF
